@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Products</title>
+</head>
+<body>
+<a th:href="@{/add}">Add Project</a>
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Project</th>
+        <th>Balance</th>
+        <th>Developers</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="project,iterator : ${projects}">
+        <td th:text="${iterator.index+1}"></td>
+        <td th:text="${project.name}"></td>
+        <td th:text="${project.balance}"></td>
+        <td th:text="${project.countDevelopers}"></td>
+        <td><a th:href="${'/change/' + project.id}" >Update</a></td>
+        <td><a th:href="${'/delete/' + project.id}" >Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
