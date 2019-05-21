@@ -7,9 +7,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Component
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ProjectServiceInterceptorAppConfig extends WebMvcConfigurerAdapter {
-    @Autowired
-    LogInterceptor logInterceptor;
+    private LogInterceptor logInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

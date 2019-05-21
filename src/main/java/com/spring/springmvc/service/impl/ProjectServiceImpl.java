@@ -21,7 +21,7 @@ public class ProjectRepositoryServiceImpl implements ProjectRepositoryService {
 
     @Override
     public Project getProjectById(int id) {
-        return repository.findById(id).orElseGet(Project::new);
+        return repository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 
     @Override
