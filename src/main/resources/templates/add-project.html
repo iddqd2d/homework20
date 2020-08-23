@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Products</title>
+</head>
+<body>
+<form method="POST" th:object="${project}" th:action="@{/home}">
+    <h4>Add new project</h4>
+    <label >Project name</label>
+    <input type="text" th:field="*{name}"/>
+    <label >Balance</label>
+    <input type="number" th:field="*{balance}"/>
+    <button>Submit</button>
+</form>
+</body>
+</html>

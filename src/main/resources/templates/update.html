@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Products</title>
+</head>
+<body>
+<form th:method="PUT" th:object="${project}" th:action="@{/home}">
+    <h4>Change project</h4>
+    <input type="text" th:field="*{name}" th:placeholder="${project.name}"/>
+    <input type="number" th:field="*{balance}" th:placeholder="${project.balance}"/>
+    <button>Submit</button>
+</form>
+</body>
+</html>
